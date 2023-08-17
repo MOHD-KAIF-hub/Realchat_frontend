@@ -1,0 +1,10 @@
+:root{
+   --main-bg:#1e272e;
+    --main-color:#0097e6;
+}
+body{
+  font-family: 'Times New Roman', Times, serif;
+}
+::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,94 @@
+.Main_form{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form_main{
+    margin:50px 10px 50px 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30rem; 
+   box-shadow: 0 8px 6px -6px var(--main-color);
+  
+}
+.form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    gap: 15px;
+   margin-top: 15px;
+}
+.form input{
+    margin-top: 20px;
+    /* width: 20rem; */
+    width: 80%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-bottom: 2px solid #333;
+    border-radius: 5px;
+}
+.btn_class .btn{
+        padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    border: none;
+    background-color:#90EE90;
+    text-transform: uppercase;
+    font-weight:4px;
+    box-shadow: 0 8px 6px -6px var(--main-color);
+}
+.form .text_area{
+    height: 130px;
+   margin: 10px;
+    overflow-y: scroll;
+       width: 80%;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-bottom: 2px solid #333;
+    border-radius: 5px;
+}
+.left_side{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left_side .Social_media{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 5px;
+}
+
+
+.Social_media p span{
+  margin: 10px;
+  font-size: 20px;
+}
+.Social_media .i_size{
+    margin: 0px 15px;
+    font-size: 30px;
+}
+.footer{
+    color: var(--main-color);
+    text-align: center;
+    font-size: 25px;
+}
+@media (max-width:580px){
+    .form_main{
+    margin:20px 5px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   box-shadow: 0 8px 6px -6px var(--main-color);
+  
+}
+
+
+}
