@@ -14,7 +14,7 @@ const ContactPage = () => {
 const Contactform=async(e)=>{
   e.preventDefault();
   const [name,email,message]=[textfield.name,textfield.email,textfield.message];
-  const res=await fetch("http://localhost:5001/users/contact",{
+  const res=await fetch("https://mern-updated-chat.onrender.com/users/contact",{
     method: "POST",
     headers:{
       "Content-Type":"application/json"
