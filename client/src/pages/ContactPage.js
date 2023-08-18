@@ -14,7 +14,7 @@ const ContactPage = () => {
 const Contactform = async (e) => {
   e.preventDefault();
   
-  const { name, email, message } = textfield;
+  const [name,email,message]=[textfield.name,textfield.email,textfield.message];
 
   try {
     const res = await fetch("https://mern-updated-chat.onrender.com/users/contact", {
