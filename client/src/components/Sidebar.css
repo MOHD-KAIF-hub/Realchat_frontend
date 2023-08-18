@@ -20,6 +20,9 @@
 .change_separately{
     border: 0.5px solid #dee2e6 !important;
 }
+.sidebar_icon{
+    margin-left: 15px;
+}
 
 .sidebar-offline-status,
 .sidebar-online-status {
