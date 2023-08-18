@@ -18,7 +18,7 @@
     color: #e3b505;
 }
 .change_separately{
-    border: 0.5px solid #dee2e6;
+    border: 0.5px solid #dee2e6 !important;
 }
 
 .sidebar-offline-status,

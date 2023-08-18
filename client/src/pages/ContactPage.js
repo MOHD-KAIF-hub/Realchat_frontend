@@ -11,36 +11,29 @@ const ContactPage = () => {
     const name=e.target.name;
     settextfield({...textfield,[name]:e.target.value});
   }
-const Contactform = async (e) => {
+const Contactform=async(e)=>{
   e.preventDefault();
-  
   const [name,email,message]=[textfield.name,textfield.email,textfield.message];
-
-  try {
-    const res = await fetch("https://mern-updated-chat.onrender.com/users/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, email, message })
-    });
-
-    if (!res.ok) {
-      console.log("Failed to send message:", res.statusText);
-      return;
-    }
-
-    const data = await res.json();
-    if (!data) {
-      console.log("Message not sent");
-    } else {
-      alert("Message Sent");
-      settextfield({ ...textfield, message: "" });
-    }
-  } catch (error) {
-    console.error("An error occurred:", error);
+  const res=await fetch("https://mern-updated-chat.onrender.com/users/contact",{
+    method: "POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify({
+      name,email,message
+    })
+  });
+  const data=await res.json();
+  if(!data)
+  {
+    console.log("message not send");
   }
-};
+  else
+  {
+    alert("Message Sent!!");
+    settextfield({...textfield,message: ""});
+  }
+}
 
   return (
    <>
