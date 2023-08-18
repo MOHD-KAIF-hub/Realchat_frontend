@@ -79,7 +79,7 @@ function Sidebar() {
             </ListGroup>
             <h2>Members</h2>
             {members.map((member) => (
-                <ListGroup.Item key={member.id} style={{ cursor: "pointer" }} active={privateMemberMsg?._id === member?._id} onClick={() => handlePrivateMemberMsg(member)} disabled={member._id === user._id}>
+                <ListGroup.Item  className="change_seperately"  key={member.id} style={{ cursor: "pointer" }} active={privateMemberMsg?._id === member?._id} onClick={() => handlePrivateMemberMsg(member)} disabled={member._id === user._id}>
                     <Row>
                         <Col xs={2} className="member-status">
                             <img src={member.picture} alt="member_pic" className="member-status-img" />

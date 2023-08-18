@@ -11,29 +11,37 @@ const ContactPage = () => {
     const name=e.target.name;
     settextfield({...textfield,[name]:e.target.value});
   }
-const Contactform=async(e)=>{
+const Contactform = async (e) => {
   e.preventDefault();
-  const [name,email,message]=[textfield.name,textfield.email,textfield.message];
-  const res=await fetch("https://mern-updated-chat.onrender.com/users/contact",{
-    method: "POST",
-    headers:{
-      "Content-Type":"application/json"
-    },
-    body:JSON.stringify({
-      name,email,message
-    })
-  });
-  const data=await res.json();
-  if(!data)
-  {
-    console.log("message not send");
+  
+  const { name, email, message } = textfield;
+
+  try {
+    const res = await fetch("https://mern-updated-chat.onrender.com/users/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    if (!res.ok) {
+      console.log("Failed to send message:", res.statusText);
+      return;
+    }
+
+    const data = await res.json();
+    if (!data) {
+      console.log("Message not sent");
+    } else {
+      alert("Message Sent");
+      settextfield({ ...textfield, message: "" });
+    }
+  } catch (error) {
+    console.error("An error occurred:", error);
   }
-  else
-  {
-    alert("Message Send");
-    settextfield({...textfield,message: ""});
-  }
-}
+};
+
   return (
    <>
   {!user && <div className="alert alert-danger">Please login for Contact Page</div>}
@@ -70,8 +78,8 @@ const Contactform=async(e)=>{
               <p><a href="http://localhost:3000"><i className=" i_size fa-brands fa-instagram"></i></a>Instagram<span style={{color:"#0097e6"}}> mohdkaif8763</span></p>
                <p><a href="http://localhost:3000"><i className="i_size fa-solid fa-envelope"></i></a>Email<span style={{color:"#0097e6"}}>mohdkaif30062002@gmail.com</span></p>
                 <p><a href="http://localhost:3000"><i className="i_size fa-solid fa-phone"></i></a>Phone <span style={{color:"#0097e6"}}>+919616477002</span></p>
-                 <p><a href="http://localhost:3000"><i className="i_size fa-brands fa-twitter"></i></a>Twitter<span style={{color:"#0097e6"}}>Kaif@twittwer</span></p>
-                  <p><a href="http://localhost:3000"><i className="i_size fa-solid fa-location-dot"></i></a>Website<span style={{color:"#0097e6"}}>https:/Kaif_Chat_App/netlify.com</span></p>
+                 <p><a href="http://localhost:3000"><i className="i_size fa-brands fa-twitter"></i></a>Twitter<span style={{color:"#0097e6"}}>Kaif@twitter</span></p>
+                  <p><a href="http://localhost:3000"><i className="i_size fa-solid fa-location-dot"></i></a>Website<span style={{color:"#0097e6"}}>https://md-chat-app.netlify.app</span></p>
             </div>
             </div>
            </Col>
